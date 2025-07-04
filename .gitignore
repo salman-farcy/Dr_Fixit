@@ -1,0 +1,18 @@
+# node_modules ফোল্ডার Git এ add হবে না
+node_modules/
+
+# Environment file
+.env
+
+# build ফোল্ডার
+build/
+dist/
+
+# system files
+.DS_Store
+
+# VSCode settings
+.vscode/
+
+# log files
+*.log
