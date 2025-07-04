@@ -55,6 +55,18 @@
       display: none !important;
     }
   </style>
+  <script>
+        // Custom color for Dr. Fixit yellow
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'drfixit-yellow': '#FFC900',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
 <body class="bg-gray-100 font-sans">
@@ -128,7 +140,7 @@
     </div>
 
     <!-- Overlay for better text readability -->
-    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="absolute inset-0 bg-black/10"></div>
 
     <!-- Main container (Your original content) -->
     <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
@@ -229,6 +241,7 @@
               </svg>
               <span>Waterproofing</span>
             </div>
+            
             <div class="flex items-center space-x-2">
               <svg class="h-8 w-8 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -473,40 +486,76 @@
 
   <!-- Why Choose Dr. Fixit? Section (Categories) -->
   <section id="categories" class="py-12 lg:py-24 bg-white">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Why Choose Dr. Fixit?</h2>
-      <div class="flex justify-center items-center space-x-1 mb-12">
-        <button class="bg-[#FFC900] text-black font-semibold py-2 px-6 rounded-l-md">Repair | Renovate</button>
-        <button class="bg-gray-200 text-gray-600 font-semibold py-2 px-6 rounded-r-md">New Construction</button>
-      </div>
+      <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Why Choose Dr. Fixit?</h2>
+          
+          <!-- Filter Buttons -->
+          <div id="filter-buttons" class="flex justify-center items-center space-x-1 mb-12">
+              <!-- The 'active-filter' class makes the button yellow initially -->
+              <button data-filter="repair" class="active-filter bg-drfixit-yellow text-black font-semibold py-2 px-6 rounded-l-md transition-colors duration-300">Repair | Renovate</button>
+              <button data-filter="new" class="bg-gray-200 text-gray-600 font-semibold py-2 px-6 rounded-r-md transition-colors duration-300">New Construction</button>
+          </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Category Card -->
-        <div>
-          <img src="./assets/Asset 7-100.jpg" alt="Roof Waterproofing"
-            class="w-full h-auto object-cover rounded-lg shadow-md">
-          <p class="mt-4 font-medium text-gray-700">Roof Waterproofing</p>
-        </div>
-        <!-- Category Card -->
-        <div>
-          <img src="./assets/Asset 9-100.jpg" alt="Interior Waterproofing"
-            class="w-full h-auto object-cover rounded-lg shadow-md">
-          <p class="mt-4 font-medium text-gray-700">Interior Waterproofing</p>
-        </div>
-        <!-- Category Card -->
-        <div>
-          <img src="./assets/Asset 10-100.jpg" alt="Exterior Waterproofing"
-            class="w-full h-auto object-cover rounded-lg shadow-md">
-          <p class="mt-4 font-medium text-gray-700">Exterior Waterproofing</p>
-        </div>
-        <!-- Category Card -->
-        <div>
-          <img src="./assets/Asset 11-100.jpg" alt="Bathroom Waterproofing"
-            class="w-full h-auto object-cover rounded-lg shadow-md">
-          <p class="mt-4 font-medium text-gray-700">Bathroom Waterproofing</p>
-        </div>
+          <!-- Category Grid -->
+          <div id="category-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              
+              <!-- Category Card 1 (Repair) -->
+              <div data-category="repair">
+                  <img src="./assets/Asset 9-100.jpg" alt="Roof Waterproofing"
+                      class="w-full h-auto object-cover rounded-lg shadow-md">
+                  <p class="mt-4 font-medium text-gray-700">Roof Waterproofing</p>
+              </div>
+
+              <!-- Category Card 2 (Repair) -->
+              <div data-category="repair">
+                  <img src="./assets/Asset 7-100.jpg" alt="Interior Waterproofing"
+                      class="w-full h-auto object-cover rounded-lg shadow-md">
+                  <p class="mt-4 font-medium text-gray-700">Interior Waterproofing</p>
+              </div>
+              
+              <!-- Category Card 3 (New Construction) -->
+              <div data-category="new" class="hidden"> <!-- Initially hidden -->
+                  <img src="./assets/Disceribe.jpg" alt="Exterior Waterproofing"
+                      class="w-full h-auto object-cover rounded-lg shadow-md">
+                  <p class="mt-4 font-medium text-gray-700">Exterior Waterproofing</p>
+              </div>
+
+              <!-- Category Card 4 (New Construction) -->
+              <div data-category="new" class="hidden"> <!-- Initially hidden -->
+                  <img src="./assets/Disceribe.jpg" alt="Exterior Waterproofing"
+                      class="w-full h-auto object-cover rounded-lg shadow-md">
+                  <p class="mt-4 font-medium text-gray-700">Exterior Waterproofing</p>
+              </div>
+              
+              <!-- Category Card 4 (Repair) -->
+              <div data-category="repair">
+                  <img src="./assets/Asset 10-100.jpg" alt="Bathroom Waterproofing"
+                      class="w-full h-auto object-cover rounded-lg shadow-md">
+                  <p class="mt-4 font-medium text-gray-700">Bathroom Waterproofing</p>
+              </div>
+
+              <!-- Category Card 4 (Repair) -->
+              <div data-category="repair">
+                  <img src="./assets/Asset 11-100.jpg" alt="Bathroom Waterproofing"
+                      class="w-full h-auto object-cover rounded-lg shadow-md">
+                  <p class="mt-4 font-medium text-gray-700">Bathroom Waterproofing</p>
+              </div>
+
+              <!-- Added for demonstration: New Construction Card 5 -->
+              <div data-category="new" class="hidden"> <!-- Initially hidden -->
+                  <img src="./assets/Disceribe.jpg" alt="New Building Foundation"
+                      class="w-full h-auto object-cover rounded-lg shadow-md">
+                  <p class="mt-4 font-medium text-gray-700">New Building Foundation</p>
+              </div>
+
+              <!-- Added for demonstration: New Construction Card 6 -->
+              <div data-category="new" class="hidden"> <!-- Initially hidden -->
+                  <img src="./assets/Disceribe.jpg" alt="New Bathroom Sealing"
+                      class="w-full h-auto object-cover rounded-lg shadow-md">
+                <p class="mt-4 font-medium text-gray-700">New Bathroom Sealing</p>
+            </div>
+          </div>
       </div>
-    </div>
   </section>
 
   <!-- Success Stories Section -->
@@ -587,7 +636,7 @@
         <div class="col-span-2 sm:col-span-1 lg:col-span-1">
           <h4 class="font-bold mb-4">Contact Us</h4>
           <ul class="space-y-2 text-sm text-gray-300 mb-6">
-            <li>Cell: +880...</li>
+            <li>Cell: +8801718041712</li>
             <li>E-mail: info@...</li>
           </ul>
           <h4 class="font-bold mb-4">Social Links</h4>
@@ -605,6 +654,39 @@
   </footer>
 
 
-</body>
+  <!-- JavaScript for filtering logic -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('#filter-buttons button');
+    const categoryCards = document.querySelectorAll('#category-grid > div');
+    const activeClasses = ['bg-drfixit-yellow', 'text-black'];
+    const inactiveClasses = ['bg-gray-200', 'text-gray-600'];
 
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filterValue = this.dataset.filter;
+
+            // Update button styles
+            filterButtons.forEach(btn => {
+                btn.classList.remove(...activeClasses);
+                btn.classList.add(...inactiveClasses);
+            });
+            this.classList.remove(...inactiveClasses);
+            this.classList.add(...activeClasses);
+
+            // Filter cards
+            categoryCards.forEach(card => {
+                if (card.dataset.category === filterValue) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+});
+</script>
+
+
+</body>
 </html>
