@@ -61,7 +61,7 @@
     <!-- =================================================================== -->
     <div
       x-data="{ showSplash: true }"
-      x-init="setTimeout(() => { showSplash = false }, 8000)"
+      x-init="setTimeout(() => { showSplash = false }, 1000)"
       x-show="showSplash"
       x-transition:leave="transition ease-in duration-500"
       x-transition:leave-start="opacity-100"
@@ -90,8 +90,8 @@
     <header
       x-data="{ activeSlide: 1 }"
       x-init="
-        const videoDuration = 7500; // Duration of your video in milliseconds
-        const imageDuration = 5000; // How long to show the image
+        const videoDuration = 7000; // Duration of your video in milliseconds
+        const imageDuration = 4000; // How long to show the image
         let timer;
 
         function nextSlide() {
@@ -358,7 +358,7 @@
 
             <!-- Contact Form -->
             <div
-              class="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-lg"
+              class="bg-white/20 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-lg"
             >
               <h3 class="text-2xl font-bold text-gray-800 mb-6">
                 Reach Out to Our Team
@@ -370,7 +370,7 @@
                       class="absolute inset-y-0 left-0 flex items-center pl-3"
                     >
                       <svg
-                        class="h-5 w-5 text-gray-400"
+                        class="h-5 w-5 text-gray-800"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -394,7 +394,7 @@
                       class="absolute inset-y-0 left-0 flex items-center pl-3"
                     >
                       <svg
-                        class="h-5 w-5 text-gray-400"
+                        class="h-5 w-5 text-gray-800"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -418,7 +418,7 @@
                       class="absolute inset-y-0 left-0 flex items-center pl-3"
                     >
                       <svg
-                        class="h-5 w-5 text-gray-400"
+                        class="h-5 w-5 text-gray-800"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -442,7 +442,7 @@
                       class="absolute inset-y-0 left-0 flex items-center pl-3"
                     >
                       <svg
-                        class="h-5 w-5 text-gray-400"
+                        class="h-5 w-5 text-gray-800"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -464,7 +464,7 @@
                     <input
                       type="text"
                       placeholder="District/Upazila"
-                      class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                      class="w-full pl-10 pr-3 py-2 border text-gray-800 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
                     />
                   </div>
                 </div>
@@ -682,24 +682,30 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Success Stories</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Story Card -->
-                <div class="bg-white rounded-lg overflow-hidden border border-gray-200">
-                    <div class="h-56 bg-gray-200"></div> <!-- Image Placeholder -->
+                <div class="bg-white rounded-lg border border-gray-200">
+                    <div class="h-56 bg-gray-200">
+                      <img class="w-full h-full object-cover" src="./assets/Disceribe.jpg" alt="">
+                    </div> <!-- Image Placeholder -->
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Evela in Waterproofing</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">Dr. Fixit is a trusted name in waterproofing, offering a wide range of advanced solutions tailored for every part of your home. With specialized products for different surfaces, Dr. Fixit provides a one-stop solution...</p>
                     </div>
                 </div>
                 <!-- Story Card -->
-                <div class="bg-white rounded-lg overflow-hidden border border-gray-200">
-                    <div class="h-56 bg-gray-200"></div> <!-- Image Placeholder -->
+                <div class="bg-white rounded-lg  border border-gray-200">
+                    <div class="h-56 bg-gray-200">
+                      <img class="w-full h-full object-cover" src="./assets/Disceribe.jpg" alt="">
+                    </div> <!-- Image Placeholder -->
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Turosko in Waterproofing</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">Dr. Fixit is a trusted name in waterproofing, offering a wide range of advanced solutions tailored for every part of your home. With specialized products for different surfaces, Dr. Fixit provides a one-stop solution...</p>
                     </div>
                 </div>
                 <!-- Story Card -->
-                <div class="bg-white rounded-lg overflow-hidden border border-gray-200">
-                    <div class="h-56 bg-gray-200"></div> <!-- Image Placeholder -->
+                <div class="bg-white rounded-lg border border-gray-200">
+                    <div class="h-56 bg-gray-200">
+                      <img class="w-full h-full object-cover" src="./assets/Disceribe.jpg" alt="">
+                    </div> <!-- Image Placeholder -->
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Pabna in Waterproofing</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">Dr. Fixit is a trusted name in waterproofing, offering a wide range of advanced solutions tailored for every part of your home. With specialized products for different surfaces, Dr. Fixit provides a one-stop solution...</p>
